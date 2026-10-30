@@ -20,7 +20,7 @@ jobs:
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
           script: |
-            cd /opt/dotnet-cloud-deploy-kit
-            git pull
-            docker compose down
-            docker compose up -d --build
+              cd /opt/dotnet-cloud-deploy-kit
+              git pull
+              docker compose -f docker/docker-compose.yml down
+              docker compose -f docker/docker-compose.yml up -d --build
